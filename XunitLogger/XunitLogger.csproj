@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <PackageId>Sommer.TestLogger</PackageId>
+    <Version>0.0.1</Version>
+    <RequireLicenseAcceptance>false</RequireLicenseAcceptance>
+    <Description>Testlogger for nunit2.x format</Description>
+    <ReleaseNotes>First version.</ReleaseNotes>
+    <Copyright>Copyright 2020</Copyright>
+    <AssemblyName>Sommer.TestLogger</AssemblyName>
+    <RootNamespace>Sommer.TestLogger</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.TestPlatform.ObjectModel" Version="16.8.3" />
+  </ItemGroup>
+</Project>

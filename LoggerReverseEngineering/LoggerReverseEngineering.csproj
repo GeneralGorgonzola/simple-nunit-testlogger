@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>Sommer.ReverseEngineeringTestLogger</AssemblyName>
+    <RootNamespace>Sommer.ReverseEngineeringTestLogger</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.12" />
+    <PackageReference Include="Microsoft.TestPlatform.ObjectModel" Version="16.8.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="log4net.config" CopyToOutputDirectory="Always" />
+  </ItemGroup>
+
+</Project>
