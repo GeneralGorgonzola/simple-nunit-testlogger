@@ -109,7 +109,8 @@
 
         private IEnumerable<Zool.Test_SuiteType> GetSuitesGroupedByTestProject(IEnumerable<TestResult> testResults)
         {
-            var suites = testResults.GroupBy(res => res.TestCase.Source)
+            var suites = testResults
+                .GroupBy(res => res.TestCase.Source)
                 .Select(s => 
                 {
                     var suiteName = Path.GetFileNameWithoutExtension(s.Key);
@@ -118,27 +119,28 @@
                         Name = suiteName,
                         Executed = true.ToString(),
                         Success = s.All(t => t.Outcome == TestOutcome.Passed || t.Outcome == TestOutcome.Skipped).ToString(),
-                        Result = s.All(t => t.Outcome == TestOutcome.Passed || t.Outcome == TestOutcome.Skipped) ? "success" : "failure",
+                        Result = s.All(t => t.Outcome == TestOutcome.Passed || t.Outcome == TestOutcome.Skipped) ? "Success" : "Failure",
                         Time = s.Sum(t => t.Duration.TotalSeconds).ToString(),
-                        Results = GetResultForTestProject(s)                              
+                        Results = GetResultsForTestProject(s)                              
                     };
                     return suite;
                 });
             return suites;
         }
 
-        private Zool.ResultsType GetResultForTestProject(IEnumerable<TestResult> resultForTestSource)
+        private Zool.ResultsType GetResultsForTestProject(IEnumerable<TestResult> resultForTestSource)
         {
             var result = new Zool.ResultsType();
-            foreach(var classResult in resultForTestSource.GroupBy(u => GetClassNameFromFullyQualifiedName(u.TestCase.FullyQualifiedName)))// Group by "test class name"
+            foreach(var resultsForTestClass in resultForTestSource
+                .GroupBy(u => GetClassNameFromFullyQualifiedName(u.TestCase.FullyQualifiedName)))
             {
                 var classSuite = new Zool.Test_SuiteType()
                 {
-                    Name = classResult.Key,
+                    Name = resultsForTestClass.Key,
                     Results = new Zool.ResultsType()
                 };
-                var testCasesForClass = GetTestCasesForTestClass(classResult);
-                foreach(var tc in testCasesForClass)
+                var testResultsForTestClass = GetTestResultsForTestClass(resultsForTestClass);
+                foreach(var tc in testResultsForTestClass)
                 {
                     classSuite.Results.Test_Case.Add(tc);
                 }
@@ -148,7 +150,7 @@
             return result;
         }
 
-        private IEnumerable<Zool.Test_CaseType> GetTestCasesForTestClass(IGrouping<string, TestResult> classResult)
+        private IEnumerable<Zool.Test_CaseType> GetTestResultsForTestClass(IEnumerable<TestResult> classResult)
         {
             foreach(var testresult in classResult)
             {

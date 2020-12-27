@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <PackageId>GeneralGorgonzola.TestLogger</PackageId>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <RequireLicenseAcceptance>false</RequireLicenseAcceptance>
     <Description>Testlogger for nunit2.x format</Description>
     <ReleaseNotes>First version.</ReleaseNotes>

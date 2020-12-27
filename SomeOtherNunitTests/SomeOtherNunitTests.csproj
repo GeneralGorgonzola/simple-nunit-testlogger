@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\XunitLogger\XunitLogger.csproj" />
+    <ProjectReference Include="..\TestLogger\TestLogger.csproj" />
     <ProjectReference Include="..\LoggerReverseEngineering\LoggerReverseEngineering.csproj" />
   </ItemGroup>
 
