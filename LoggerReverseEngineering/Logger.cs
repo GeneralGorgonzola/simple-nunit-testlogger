@@ -1,4 +1,4 @@
-﻿namespace Sommer.ReverseEngineeringTestLogger
+﻿namespace GeneralGorgonzola.ReverseEngineeringTestLogger
 {
     using System.Collections.Generic;
     using System.IO;

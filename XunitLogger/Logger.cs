@@ -1,4 +1,4 @@
-﻿namespace Sommer.TestLogger
+﻿namespace GeneralGorgonzola.TestLogger
 {
     using System;
     using System.Collections.Generic;

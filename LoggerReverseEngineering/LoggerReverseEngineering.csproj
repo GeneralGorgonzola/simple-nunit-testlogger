@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>Sommer.ReverseEngineeringTestLogger</AssemblyName>
-    <RootNamespace>Sommer.ReverseEngineeringTestLogger</RootNamespace>
+    <AssemblyName>GeneralGorgonzola.ReverseEngineeringTestLogger</AssemblyName>
+    <RootNamespace>GeneralGorgonzola.ReverseEngineeringTestLogger</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

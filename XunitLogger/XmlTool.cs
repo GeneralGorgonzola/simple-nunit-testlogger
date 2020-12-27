@@ -1,4 +1,4 @@
-namespace Sommer.TestLogger
+namespace GeneralGorgonzola.TestLogger
 {
     using System.IO;
     using System.Linq;
