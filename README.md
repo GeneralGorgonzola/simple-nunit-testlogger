@@ -24,7 +24,8 @@ Install the tool, download the XSD and do this:
 
 This generates a .cs file, called *Zool.cs*.
 
-Using this file, we are reasonably sure to generate only valid XML when saving the test reports.
+Using this file, we are *reasonably sure* to generate only valid XML when saving the test reports.
+Beware, though, that the nunit-people seem to have used strings instead of booleans, dates, times, enumerations (for error-codes), and decimals instead of integers... but the XML will by itself will be valid, at least.
 
 ## Roll your own...
 Create a class library:
